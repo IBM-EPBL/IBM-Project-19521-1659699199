@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART LENDER</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&family=Roboto:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Albert+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            /* background: linear-gradient(#141e30, #243b55);*/
+            background: rgb(40, 71, 128);
+            background: radial-gradient(circle, #e4b756 16%, #76ecd9 79%);
+        }
+
+        .login-box {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+s
+        ::placeholder {
+            color: aliceblue;
+        }
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .fon {
+            color: #fff;
+            text-align: center;
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+        /*--- Button */
+
+        .container,
+        .container:before,
+        .container:after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .btn {
+            background: rgb(236, 240, 241);
+        }
+
+        .container {
+            min-width: 500px;
+            margin: 5% auto;
+            text-align: center;
+        }
+
+
+        button:hover {
+            cursor: pointer
+        }
+
+        button {
+            background: transparent;
+            outline: none;
+            position: relative;
+            border: 3px solid #81C6E8;
+            padding: 15px 50px;
+            overflow: hidden;
+        }
+
+        /*button:before (attr data-hover)*/
+        button:hover:before {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        button:before {
+            content: attr(data-hover);
+            position: absolute;
+            top: 1.1em;
+            left: 0;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            opacity: 0;
+            transform: translate(-100%, 0);
+            transition: all .3s ease-in-out;
+        }
+
+        /*button div (button text before hover)*/
+        button:hover div {
+            opacity: 0;
+            transform: translate(100%, 0)
+        }
+
+        button div {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            transition: all .3s ease-in-out;
+        }
+
+
+        /*--- Footer ---*/
+
+        .footer {
+            margin-top: 203vh;
+        }
+
+        .nav-link {
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #031D44;
+            padding: 20px 0px;
+            /* margin: 0px 20px;*/
+
+            display: inline-block;
+            position: relative;
+            opacity: 0.75;
+        }
+
+        #d {
+            margin-top: -40px;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        #p {
+            margin-top: -50px;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::before {
+            transition: 300ms;
+            height: 3px;
+            content: "";
+            position: absolute;
+            background-color: #031D44;
+        }
+
+        .nav-link-fade-up::before {
+            width: 100%;
+            bottom: 5px;
+            opacity: 0;
+        }
+
+        .nav-link-fade-up:hover::before {
+            bottom: 10px;
+            opacity: 1;
+        }
+
+        p {
+            color: white;
+            font-family: 'Aref Ruqaa Ink', serif;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h2 style="text-transform: uppercase; font-family: 'Aref Ruqaa Ink', serif;">Smart lender - <br> <span
+                style="font-size:14px ; color:azure">Know your
+                Loan eligibility</span> </h2>
+        <p class="fon" style="font-size: 14px ;">Let's begin by entering your deatils below</p> <br>
+        <form action="/submit" method="post">
+            <div class="user-box">
+                <input type="text" name="" required="" onfocus="this.placeholder='Enter your name'"
+                    onblur="this.placeholder=''">
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="Loan_ID" required="" onfocus="this.placeholder='Enter your Loan ID'"
+                    onblur="this.placeholder=''">
+                <label>Loan ID</label>
+            </div>
+            <div class="user-box">
+                <input list="gender" type="data-list" name="Gender" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your Gender'" onblur="this.placeholder=''">
+                <label>Gender</label>
+                <datalist id="gender" name="gender">
+                    <option value="Male"></option>
+                    <option value="female"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="married" type="text" name="Married" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your Marital Status'" onblur="this.placeholder=''">
+                <label>Married</label>
+                <datalist id="married" name="married">
+                    <option value="yes"></option>
+                    <option value="no"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="dep" type="text" name="Dependents" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your Dependents'" onblur="this.placeholder=''">
+                <label>Dependents</label>
+                <datalist id="dep" name="dep">
+                    <option value="0"></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3+"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="edu" type="text" name="Education" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your Educational Qualification'" onblur="this.placeholder=''">
+                <label>Education</label>
+                <datalist name="edu" id="edu">
+                    <option value="Graduate"></option>
+                    <option value="Non-Graduate"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="emp" type="text" name="Self_Employes" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Are you self employed?'" onblur="this.placeholder=''">
+                <label>Self Employed</label>
+                <datalist name="emp" id="emp">
+                    <option value="yes"></option>
+                    <option value="no"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input type="number" name="ApplicantIncome" required=""
+                    onfocus="this.placeholder='Enter your Income in Dollars'" onblur="this.placeholder=''">
+                <label>Applicant Income</label>
+            </div>
+            <div class="user-box">
+                <input type="number" name="CoaaplicantIncome" required=""
+                    onfocus="this.placeholder='Enter your CO Applicant Income in Dollars'" onblur="this.placeholder=''">
+                <label>CO Applicant Income</label>
+            </div>
+            <div class="user-box">
+                <input type="number" name="LoanAmount" required=""
+                    onfocus="this.placeholder='Enter your Loan Amount in Dollars'" onblur="this.placeholder=''">
+                <label>Loan Amount</label>
+            </div>
+            <div class="user-box">
+                <input list="term" type="text" name="Loan_Amount_Term" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter the loan amount term'" onblur="this.placeholder=''">
+                <label>Loan Amount Term</label>
+                <datalist name="term" id="term">
+                    <option value="480"></option>
+                    <option value="360"></option>
+                    <option value="300"></option>
+                    <option value="240"></option>
+                    <option value="180"></option>
+                    <option value="120"></option>
+                    <option value="84"></option>
+                    <option value="60"></option>
+                    <option value="36"></option>
+                    <option value="12"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="credit" type="text" name="Credit_History" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your Credit History'" onblur="this.placeholder=''">
+                <label>Credit History</label>
+                <datalist name="credit" id="credit">
+                    <option value="yes"></option>
+                    <option value="no"></option>
+                </datalist>
+            </div>
+            <div class="user-box">
+                <input list="prop" type="text" name="Property_Area" required="" onchange="resetIfInvalid(this);"
+                    onfocus="this.placeholder='Enter your area of the property'" onblur="this.placeholder=''">
+                <label>Property Area</label>
+                <datalist name="prop" id="prop">
+                    <option value="Urban"></option>
+                    <option value="Rural"></option>
+                    <option value="Semi-Rural"></option>
+                </datalist>
+            </div>
+
+            <div class="container">
+                <a href="submit.html">
+                    <button class="btn" data-hover="PREDICT" onclick="submit.html">
+                        <div>SUBMIT</div>
+                    </button>
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <center>
+        <footer>
+            <div class="footer">
+                <p>Developed by:-</p> <br>
+
+                <p id="d" class="nav-link nav-link-fade-up"
+                    >Jagadish , Brajesh </p>
+
+                <span style="font-family: 'EB Garamond', serif;"> &nbsp; & &nbsp;</span>
+                <p id="p" class="nav-link nav-link-fade-up" >
+                    Guru Nadhan , Dinakaran</p>
+            </div>
+        </footer>
+    </center>
+
+</body>
+<script>
+    function resetIfInvalid(el) {
+        //just for beeing sure that nothing is done if no value selected
+        if (el.value == "")
+            return;
+        var options = el.list.options;
+        for (var i = 0; i < options.length; i++) {
+            if (el.value == options[i].value)
+                //option matches: work is done
+                return;
+        }
+        //no match was found: reset the value
+        el.value = "";
+    }
+</script>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART LENDER</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&family=Roboto:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+        html {
+            user-select: none;
+        }
+
+        body {
+            margin-top: 7%;
+            color: white;
+        }
+
+        html {
+            background: rgb(20, 30, 48);
+            background: radial-gradient(circle, #4da1a7 16%, #e77326 79%);
+        }
+
+        h1 {
+            font-size: 45px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h6 {
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ~~~~~~~ BUTTON ~~~~~~~ */
+
+        .container,
+        .container:before,
+        .container:after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .btn {
+            background: rgb(236, 240, 241);
+        }
+
+        .container {
+            min-width: 500px;
+            margin: 5% auto;
+            text-align: center;
+        }
+
+
+        button:hover {
+            cursor: pointer
+        }
+
+        button {
+            background: transparent;
+            outline: none;
+            position: relative;
+            border: 3px solid #031D44;
+            padding: 15px 50px;
+            overflow: hidden;
+        }
+
+        /*button:before (attr data-hover)*/
+        button:hover:before {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        button:before {
+            content: attr(data-hover);
+            position: absolute;
+            top: 1.1em;
+            left: 0;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            opacity: 0;
+            transform: translate(-100%, 0);
+            transition: all .3s ease-in-out;
+        }
+
+        /*button div (button text before hover)*/
+        button:hover div {
+            opacity: 0;
+            transform: translate(100%, 0)
+        }
+
+        button div {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            transition: all .3s ease-in-out;
+        }
+
+        /*--- Footer ---*/
+
+        .footer {
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #031D44;
+            padding: 20px 0px;
+            /* margin: 0px 20px;*/
+
+            display: inline-block;
+            position: relative;
+            opacity: 0.75;
+        }
+
+        #d {
+            margin-top: -40px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        #p {
+            margin-top: -50px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::before {
+            transition: 300ms;
+            height: 3px;
+            content: "";
+            position: absolute;
+            background-color: #031D44;
+        }
+
+        .nav-link-fade-up::before {
+            width: 100%;
+            bottom: 5px;
+            opacity: 0;
+        }
+
+        .nav-link-fade-up:hover::before {
+            bottom: 10px;
+            opacity: 1;
+        }
+
+        p {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <center>
+            <h1>Smart Lender</h1>
+            <h3>Get to know your applicant application will get accepted or not</h3>
+            <h6>Click the <em><b> Predict </b></em> button and update the details to know the prediction for the
+                applicant.
+            </h6>
+
+            <div class="container">
+                <a href="predict.html">
+                    <button class="btn" data-hover="Loan Predictor" onclick="predict.html">
+                        <div>Predict</div>
+                    </button>
+                </a>
+            </div>
+
+            <footer>
+                <div class="footer">
+                    <p>Developed by:-</p> <br>
+
+                    <p id="d" class="nav-link nav-link-fade-up"
+                        >Jagadish , Brajesh </p>
+
+                    <span style="font-family: 'EB Garamond', serif;"> &nbsp; & &nbsp;</span>
+                    <p id="p" class="nav-link nav-link-fade-up" >
+                        Guru Nadhan , Dinakaran</p>
+                </div>
+            </footer>
+        </center>
+
+
+    </main>
+</body>
+
+</html>
